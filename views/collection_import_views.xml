@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_collection_import_form" model="ir.ui.view">
+        <field name="name">collection.import.form</field>
+        <field name="model">collection.import</field>
+        <field name="arch" type="xml">
+            <form string="Collection Import">
+                <group>
+                    <field name="api_token"/>
+                </group>
+                <footer>
+                    <button name="import_collections" type="object" string="Import Collections" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_collection_import" model="ir.actions.act_window">
+        <field name="name">Collection Import</field>
+        <field name="res_model">collection.import</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+    </record>
+
+    <menuitem id="menu_collection_import" name="Collection Import" parent="base.menu_custom" action="action_collection_import"/>
+</odoo>
